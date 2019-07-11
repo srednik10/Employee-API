@@ -57,6 +57,10 @@ public class FilterServiceImpl implements FilterService {
 
 		case "like":
 			return cb.like(c.get(predicateDto.getColumnName()), (String)predicateDto.getValues()[0]);
+			
+		case "between":
+			return cb.between(c.get(predicateDto.getColumnName()), (int)predicateDto.getValues()[0],(int)predicateDto.getValues()[1]);
+			
 		default:
 			throw new RuntimeException();
 		
